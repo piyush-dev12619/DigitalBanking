@@ -1,0 +1,46 @@
+package com.piyush.DigitalBanking.Controller;
+
+
+import com.piyush.DigitalBanking.Entity.Account;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/v1/account")
+public class AccountController {
+
+    private final com.piyush.DigitalBanking.Service.AccountCreationService accountService;
+
+    public AccountController(com.piyush.DigitalBanking.Service.AccountCreationService accountService) {
+        this.accountService = accountService;
+    }
+
+    @PostMapping("/createAccount")
+    public ResponseEntity<?> createAccount(
+            @RequestParam String customerId) {
+        try {
+            Account createdAccount =
+                    accountService.createAccount(customerId);
+
+            return ResponseEntity.status(HttpStatus.CREATED)
+                    .body(createdAccount);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body("" + e.getMessage());
+        }
+
+    }}
+
+//    @ExceptionHandler(IllegalArgumentException.class)
+//    public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException e) {
+//        return ResponseEntity.status(HttpStatus.CONFLICT)
+//                .body(e.getMessage());
+//    }
+//
+//    @ExceptionHandler(Exception.class)
+//    public ResponseEntity<String> handleException(Exception e) {
+//        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+//                .body("An error occurred while creating the account.");
+//    }
+//}
