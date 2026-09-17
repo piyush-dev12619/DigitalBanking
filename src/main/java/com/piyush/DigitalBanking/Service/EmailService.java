@@ -1,5 +1,6 @@
 package com.piyush.DigitalBanking.Service;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
+@Tag(   name = "Email Service", description = "Service for sending emails")
 public class EmailService {
 
     private final JavaMailSender mailSender;

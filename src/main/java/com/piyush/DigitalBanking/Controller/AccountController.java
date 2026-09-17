@@ -2,12 +2,14 @@ package com.piyush.DigitalBanking.Controller;
 
 
 import com.piyush.DigitalBanking.Entity.Account;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/account")
+@Tag(name = "Account Controller", description = "APIs for Account Creation")
 public class AccountController {
 
     private final com.piyush.DigitalBanking.Service.AccountCreationService accountService;

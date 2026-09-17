@@ -3,6 +3,7 @@ package com.piyush.DigitalBanking.Service;
 
 import com.piyush.DigitalBanking.Entity.CIF;
 import com.piyush.DigitalBanking.Reposetory.CIFReposetory;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -13,6 +14,7 @@ import java.util.UUID;
 
 @Slf4j
 @Service
+@Tag(name = "CIF Service", description = "Service for generating Customer Information File (CIF) numbers")
 public class CIFService {
 
 private final CIFReposetory cifReposetory;

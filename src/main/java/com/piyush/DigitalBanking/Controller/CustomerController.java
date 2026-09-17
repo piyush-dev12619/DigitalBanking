@@ -5,6 +5,7 @@ import com.piyush.DigitalBanking.Entity.Customer;
 import com.piyush.DigitalBanking.Reposetory.CustomerOnboardingReposetory;
 import com.piyush.DigitalBanking.Service.CustomerOnboardingService;
 import com.sun.net.httpserver.HttpServer;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.coyote.Response;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/customers")
 @Slf4j
+@Tag(name = "Customer Controller", description = "APIs for Customer Onboarding")
 public class CustomerController {
 
 private final CustomerOnboardingService customerOnboardingService;

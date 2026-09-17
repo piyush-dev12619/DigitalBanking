@@ -2,6 +2,7 @@ package com.piyush.DigitalBanking.Service;
 
 import com.piyush.DigitalBanking.Entity.Customer;
 import com.piyush.DigitalBanking.Reposetory.CustomerOnboardingReposetory;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @Service
+@Tag(name = "Customer Onboarding Service", description = "Service for onboarding customers")
 public class CustomerOnboardingService {
 
     private final CustomerOnboardingReposetory customerOnboardingReposetory;

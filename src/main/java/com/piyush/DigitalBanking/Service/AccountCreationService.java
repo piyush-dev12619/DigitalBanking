@@ -7,10 +7,12 @@ import com.piyush.DigitalBanking.Entity.Customer;
 import com.piyush.DigitalBanking.Reposetory.AccountReposetory;
 import com.piyush.DigitalBanking.Reposetory.CIFReposetory;
 import com.piyush.DigitalBanking.Reposetory.CustomerOnboardingReposetory;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 @Slf4j
 @Service
+@Tag(name = "Account Creation Service", description = "Service for creating accounts for customers")
 public class AccountCreationService {
 
     private final AccountReposetory accountReposetory;

@@ -3,6 +3,7 @@ package com.piyush.DigitalBanking.Controller;
 
 import com.piyush.DigitalBanking.Entity.CIF;
 import com.piyush.DigitalBanking.Entity.Customer;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,7 @@ import java.util.Map;
 @Slf4j
 @RestController
 @RequestMapping("/api/cif")
+@Tag(name = "CIF Controller", description = "APIs for Customer Information File (CIF) Management")
 public class CIFController {
 
      private final CustomerOnboardingService customerOnboardingService;
