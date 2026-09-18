@@ -104,9 +104,11 @@ public class AccountService {
         }
 
         //fetchinhg account number service
-
+@Tag(name = "Account Retrieval Service", description = "Service for retrieving account details by customer ID")
+@Cacheable(value = "accounts", key = "#customerId")
     public Account getAccountByCustomerId(String customerId) {
         log.info("inside AccountService getAccountByCustomerId method for customerId: {}", customerId);
+        log.info("Fetching from Database for customerId: {}", customerId);
         return accountReposetory.findByCustomerId(customerId);
     }
 }
