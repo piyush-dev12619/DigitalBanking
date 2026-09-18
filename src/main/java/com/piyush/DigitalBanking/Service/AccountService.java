@@ -9,18 +9,21 @@ import com.piyush.DigitalBanking.Reposetory.CIFReposetory;
 import com.piyush.DigitalBanking.Reposetory.CustomerOnboardingReposetory;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+
+@Cacheable
 @Slf4j
 @Service
 @Tag(name = "Account Creation Service", description = "Service for creating accounts for customers")
-public class AccountCreationService {
+public class AccountService {
 
     private final AccountReposetory accountReposetory;
     private final CIFReposetory cifReposetory;
     private final CustomerOnboardingReposetory customerOnboardingReposetory;
     private final EmailService emailService;
 
-    public AccountCreationService(
+    public AccountService(
             AccountReposetory accountReposetory,
             CIFReposetory cifReposetory,
             CustomerOnboardingReposetory customerOnboardingReposetory,
@@ -100,4 +103,10 @@ public class AccountCreationService {
         }
         }
 
+        //fetchinhg account number service
+
+    public Account getAccountByCustomerId(String customerId) {
+        log.info("inside AccountService getAccountByCustomerId method for customerId: {}", customerId);
+        return accountReposetory.findByCustomerId(customerId);
     }
+}
