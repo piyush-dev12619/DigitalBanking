@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
-@Cacheable
+
 @Slf4j
 @Service
 @Tag(name = "Account Creation Service", description = "Service for creating accounts for customers")

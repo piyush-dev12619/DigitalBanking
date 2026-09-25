@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Banking Platform</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="brand-mark">DB</div>
+            <div>
+                <strong>DigitalBank</strong>
+                <span>Banking Platform</span>
+            </div>
+        </div>
+
+        <nav class="nav">
+            <button class="nav-item active" data-section="dashboard">
+                <span>⌂</span> Dashboard
+            </button>
+            <button class="nav-item" data-section="customers">
+                <span>♙</span> Customers
+            </button>
+            <button class="nav-item" data-section="accounts">
+                <span>▣</span> Accounts
+            </button>
+            <button class="nav-item" data-section="transactions">
+                <span>↔</span> Transactions
+            </button>
+            <button class="nav-item" data-section="kyc">
+                <span>✓</span> KYC Verification
+            </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="security-card">
+                <div class="security-icon">✓</div>
+                <div>
+                    <strong>Secure Banking</strong>
+                    <span>JWT protected session</span>
+                </div>
+            </div>
+            <button class="nav-item">
+                <span>⚙</span> Settings
+            </button>
+        </div>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <button class="menu-btn" id="menuBtn">☰</button>
+            <div class="search">
+                <span>⌕</span>
+                <input id="globalSearch" type="search" placeholder="Search customers, accounts...">
+            </div>
+            <div class="topbar-actions">
+                <button class="icon-btn" title="Notifications">♢<i></i></button>
+                <div class="profile">
+                    <div class="avatar">PK</div>
+                    <div class="profile-text">
+                        <strong>Piyush Kumar</strong>
+                        <span>Administrator</span>
+                    </div>
+                    <span class="chevron">⌄</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="content">
+            <div class="page-section active" id="dashboard">
+                <div class="page-heading">
+                    <div>
+                        <p class="eyebrow">OVERVIEW</p>
+                        <h1>Good afternoon, Piyush</h1>
+                        <p class="muted">Here is what's happening across your digital banking platform.</p>
+                    </div>
+                    <button class="primary-btn" id="openAccountBtn">+ Open New Account</button>
+                </div>
+
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon blue">▣</div>
+                        <div><span>Total Accounts</span><strong>1,284</strong><small class="positive">↑ 8.2% this month</small></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon green">♙</div>
+                        <div><span>Active Customers</span><strong>972</strong><small class="positive">↑ 5.7% this month</small></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon orange">₹</div>
+                        <div><span>Total Balance</span><strong>₹4.82 Cr</strong><small class="positive">↑ 12.4% this month</small></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon purple">✓</div>
+                        <div><span>Pending KYC</span><strong>27</strong><small class="warning">Requires attention</small></div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="panel chart-panel">
+                        <div class="panel-heading">
+                            <div>
+                                <h2>Account Activity</h2>
+                                <p>Accounts opened over the last 7 months</p>
+                            </div>
+                            <select id="chartRange">
+                                <option>Last 7 months</option>
+                                <option>Last 30 days</option>
+                            </select>
+                        </div>
+                        <div class="chart">
+                            <div class="y-axis"><span>250</span><span>200</span><span>150</span><span>100</span><span>50</span><span>0</span></div>
+                            <div class="chart-area">
+                                <div class="grid-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                                <svg viewBox="0 0 700 260" preserveAspectRatio="none" aria-label="Account activity chart">
+                                    <defs>
+                                        <linearGradient id="areaFill" x1="0" x2="0" y1="0" y2="1">
+                                            <stop offset="0%" stop-color="#2563eb" stop-opacity=".22"/>
+                                            <stop offset="100%" stop-color="#2563eb" stop-opacity="0"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <path class="chart-area-fill" d="M0 210 C70 190 75 175 130 185 S190 145 235 155 S290 115 350 130 S410 105 460 120 S520 75 575 92 S640 55 700 65 L700 260 L0 260 Z"/>
+                                    <path class="chart-line" d="M0 210 C70 190 75 175 130 185 S190 145 235 155 S290 115 350 130 S410 105 460 120 S520 75 575 92 S640 55 700 65"/>
+                                </svg>
+                                <div class="x-axis"><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <div>
+                                <h2>Quick Actions</h2>
+                                <p>Common banking operations</p>
+                            </div>
+                        </div>
+                        <div class="quick-actions">
+                            <button data-action="account"><b>+</b><span><strong>Open Account</strong><small>Create a new bank account</small></span></button>
+                            <button data-action="customer"><b>♙</b><span><strong>Add Customer</strong><small>Start customer onboarding</small></span></button>
+                            <button data-action="kyc"><b>✓</b><span><strong>Review KYC</strong><small>27 applications pending</small></span></button>
+                            <button data-action="transaction"><b>↔</b><span><strong>View Transactions</strong><small>Monitor recent activity</small></span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Recent Accounts</h2>
+                            <p>Latest accounts opened on the platform</p>
+                        </div>
+                        <button class="text-btn" data-section-link="accounts">View all →</button>
+                    </div>
+                    <div class="table-wrap">
+                        <table>
+                            <thead><tr><th>Customer</th><th>Account Number</th><th>Type</th><th>Balance</th><th>Status</th><th>Created</th></tr></thead>
+                            <tbody>
+                                <tr><td><div class="customer-cell"><span class="mini-avatar">AS</span><span><strong>Ankit Sharma</strong><small>ankit@example.com</small></span></div></td><td>ACC482913</td><td>Savings</td><td>₹84,500</td><td><span class="badge success">Active</span></td><td>25 Sep 2026</td></tr>
+                                <tr><td><div class="customer-cell"><span class="mini-avatar pink">RK</span><span><strong>Riya Kapoor</strong><small>riya@example.com</small></span></div></td><td>ACC374821</td><td>Current</td><td>₹1,42,000</td><td><span class="badge success">Active</span></td><td>24 Sep 2026</td></tr>
+                                <tr><td><div class="customer-cell"><span class="mini-avatar green">VM</span><span><strong>Vikas Mehta</strong><small>vikas@example.com</small></span></div></td><td>ACC294610</td><td>Savings</td><td>₹56,200</td><td><span class="badge warning">Pending</span></td><td>23 Sep 2026</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-section" id="customers">
+                <div class="page-heading"><div><p class="eyebrow">CUSTOMERS</p><h1>Customer Management</h1><p class="muted">Manage onboarding and customer profiles.</p></div><button class="primary-btn">+ Add Customer</button></div>
+                <div class="empty-page"><div class="big-icon">♙</div><h2>Customer module ready</h2><p>Connect this screen to your existing CustomerOnboardingController APIs.</p></div>
+            </div>
+
+            <div class="page-section" id="accounts">
+                <div class="page-heading"><div><p class="eyebrow">ACCOUNTS</p><h1>Account Management</h1><p class="muted">View and manage customer accounts.</p></div><button class="primary-btn" id="openAccountBtn2">+ Open New Account</button></div>
+                <div class="empty-page"><div class="big-icon">▣</div><h2>Account management</h2><p>Use the button above to call your existing <code>/api/v1/account/createAccount</code> endpoint.</p></div>
+            </div>
+
+            <div class="page-section" id="transactions">
+                <div class="page-heading"><div><p class="eyebrow">TRANSACTIONS</p><h1>Transactions</h1><p class="muted">Monitor deposits, withdrawals and transfers.</p></div></div>
+                <div class="empty-page"><div class="big-icon">↔</div><h2>Transaction module</h2><p>Ready for your future deposit, withdrawal and transfer APIs.</p></div>
+            </div>
+
+            <div class="page-section" id="kyc">
+                <div class="page-heading"><div><p class="eyebrow">COMPLIANCE</p><h1>KYC Verification</h1><p class="muted">Review and manage customer verification.</p></div></div>
+                <div class="empty-page"><div class="big-icon">✓</div><h2>KYC module</h2><p>Connect this section when you add your KYC workflow.</p></div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<div class="modal-backdrop" id="accountModal">
+    <div class="modal">
+        <button class="modal-close" id="closeModal">×</button>
+        <div class="modal-icon">▣</div>
+        <p class="eyebrow">ACCOUNT OPENING</p>
+        <h2>Open a new account</h2>
+        <p class="muted">Enter the customer ID. Your Spring Boot API will validate the customer and CIF before creating the account.</p>
+
+        <form id="accountForm">
+            <label for="customerId">Customer ID</label>
+            <input id="customerId" name="customerId" placeholder="e.g. 6aa65ad47e1ac08b507f4827" required>
+            <button class="primary-btn full" type="submit" id="createBtn">Create Account</button>
+        </form>
+
+        <div class="api-result" id="apiResult"></div>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="/js/app.js"></script>
+</body>
+</html>
